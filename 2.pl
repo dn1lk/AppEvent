@@ -1,6 +1,8 @@
 #!/usr/bin/env perl
 use strict;
 
+$, = ' ';
+
 my @list1 = (1, 0, 2, 3, 4, 'ee');
 my @list2 = (3, 4, 2, 'ee', 'ab');
 

@@ -6,7 +6,7 @@ my $ip = "255.255.4.38";  # использовал бы ifconfig, да толь�
 sub check
 {
     my ($ip) = @_;
-    return $ip =~ /((\d{1,3}\.){3}\d{1,3})/ && !grep($_ > 255, split '.', $ip);
+    return $ip =~ /((25[0-5]|2[0-4]\d|[01]?\d\d?)\.){3}(25[0-5]|2[0-4]\d|[01]?\d\d?)/;
 }
 
 print check($ip) ? "Correct" : "Not correct";

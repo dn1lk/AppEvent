@@ -1,6 +1,8 @@
 #!/usr/bin/env perl
 use strict;
 
+$, = ' ';
+
 my @list = (1, 2, 3, 4, 'ab');
 
 sub shuffle
@@ -15,6 +17,6 @@ sub shuffle
     }
 }
 
-print 'Before: ', @list, "\n";
+print 'Before:', @list, "\n";
 shuffle \@list;
-print 'After: ', @list, "\n";
+print 'After:', @list, "\n";
