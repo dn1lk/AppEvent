@@ -9,23 +9,7 @@ sub morph
     my $n100 = abs($digit) % 100;
     my $n10 = $digit % 10;
 
-    if (10 < $n100 < 20)
-    {
-        $word = $form3
-    }
-    elsif ($n10 == 1)
-    {
-        $word = $form1
-    }
-    elsif (1 < $n10 < 5)
-    {
-        $word = $form2
-    }
-    else
-    {
-        $word = $form3
-    }
-
+    (10 < $n100 < 20) ? $word = $form3 : ($n10 == 1) ? $word = $form1 : (1 < $n10 < 5) ? $word = $form2 : $word = $form3;
     return $digit . ' ' . $word;
 }
 
