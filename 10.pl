@@ -7,11 +7,9 @@ my $filename_new = "10_new.txt";
 my $filedata;
 
 open(fh_old, "<", $filename_old) or die "File '$filename_old' can't be opened";
+local $/; # включаем возможность прочитать весь файл сразу
 
-while(<fh_old>)
-{
-    $filedata .= $_;
-}
+$filedata = <fh_old>;
 
 close(fh_old) or "Couldn't close files";
 
