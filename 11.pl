@@ -5,12 +5,11 @@ my $filename = "11.txt";
 my %filedata;
 
 open(fh, "<", $filename) or die "File '$filename' can't be opened";
+local $/; # enable localized slurp mode
 
-while(<fh>)
-{
-    $_ =~ s/[,\.]//g;
-    for (split ' ', "\L$_") {$filedata{$_}++;};
-}
+my $words = <fh>;
+$words ~= s/[,\.]//g;
+for (split ' ', "\L$words") {$filedata{$_}++;};
 
 for (keys %filedata)
 {
